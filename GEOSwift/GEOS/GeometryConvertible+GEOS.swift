@@ -295,9 +295,6 @@ public extension GeometryConvertible {
     // MARK: - Buffer Functions
 
     func buffer(by width: Double) throws -> Geometry {
-        guard width >= 0 else {
-            throw GEOSwiftError.negativeBufferWidth
-        }
         let context = try GEOSContext()
         let geosObject = try geometry.geosObject(with: context)
         // returns nil on exception
